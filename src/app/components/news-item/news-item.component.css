@@ -1,0 +1,31 @@
+.container {
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: #dbdbdb;
+
+  margin: 10px;
+  padding: 10px;
+  width: 550px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container:hover {
+  box-shadow: 1px 1px 1px 1px #828282;
+  background-color: #bababa;
+  transition: 0.2s;
+}
+
+.metadata {
+  margin: 10px;
+  padding: 10px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.crypto-image {
+  height: 100px;
+  width: 100px;
+}
