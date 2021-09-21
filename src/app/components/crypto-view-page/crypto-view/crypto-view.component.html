@@ -1,0 +1,4 @@
+<div class="container" *ngIf="crypto$ | async as crypto">
+  <app-crypto-metadata [crypto] = crypto></app-crypto-metadata>
+  <app-crypto-info [crypto] = crypto></app-crypto-info>
+</div>

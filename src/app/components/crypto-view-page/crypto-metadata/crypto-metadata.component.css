@@ -1,0 +1,48 @@
+.coin-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.coin {
+  display: flex;
+  flex-direction: row;
+}
+
+.crypto-image {
+  padding: 10px;
+}
+
+.rank {
+  background-color: #393939;
+  border: 1px solid #393939;
+  border-radius: 3px;
+  width: fit-content;
+  color: white;
+}
+
+.price {
+  font-weight: bold;
+  color: #828282;
+  padding-right: 10px;
+}
+
+.price-change {
+  display: flex;
+  flex-direction: row;
+}
+
+.price-change-percentage-24h {
+
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.price-low-high {
+  display: flex;
+}

@@ -12,13 +12,21 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AboutComponent } from './components/about/about.component';
-import { HomeComponent } from './components/home/home.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { NewsListComponent } from './components/news-list/news-list.component';
-import { TrendingListComponent } from './components/trending-list/trending-list.component';
+import { AboutPageComponent } from './components/pages/about-page/about-page.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
+import { NewsListComponent } from './components/pages/news/news-list/news-list.component';
+import { TrendingListComponent } from './components/pages/trending-list/trending-list.component';
 import { TrendingCoinComponent } from './components/trending-coin/trending-coin.component';
-import { NewsItemComponent } from './components/news-item/news-item.component';
+import { NewsItemComponent } from './components/pages/news/news-item/news-item.component';
+import { CryptoViewComponent } from './components/crypto-view-page/crypto-view/crypto-view.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CryptoMetadataComponent } from './components/crypto-view-page/crypto-metadata/crypto-metadata.component';
+import { CryptoInfoComponent } from './components/crypto-view-page/crypto-info/crypto-info.component';
+import { InfoBannerComponent } from './components/info-banner/info-banner.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,13 +34,19 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
     CryptoComponent,
     CryptoListComponent,
     HeaderComponent,
-    AboutComponent,
-    HomeComponent,
-    ContactComponent,
+    AboutPageComponent,
+    HomePageComponent,
+    ContactPageComponent,
     NewsListComponent,
     TrendingListComponent,
     TrendingCoinComponent,
-    NewsItemComponent
+    NewsItemComponent,
+    CryptoViewComponent,
+    PageNotFoundComponent,
+    CryptoMetadataComponent,
+    CryptoInfoComponent,
+    InfoBannerComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +56,9 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
     MatButtonModule,
     MatCardModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Coin} from '../../interface/trending/TrendingCoins';
-import {StatusUpdate} from '../../interface/status-update/StatusUpdate';
+import {Coin} from '../../../../interface/trending/TrendingCoins';
+import {StatusUpdate} from '../../../../interface/status-update/StatusUpdate';
 
 @Component({
   selector: 'app-news-item',

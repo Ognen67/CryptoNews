@@ -1,0 +1,26 @@
+<div class="coin-info">
+  <div class="rank">Rank #{{crypto.market_cap_rank}}</div>
+  <div class="coin">
+    <img class="crypto-image" src="{{crypto.image.small}}" alt="{{crypto.name}} image">
+    <h1>{{crypto.name}} ({{crypto.symbol}})</h1>
+  </div>
+  <div class="price-action">
+    <div class="price-change">
+      <h1 class="price">${{crypto.market_data.current_price.usd}}</h1>
+      <h1 class="price-change-percentage-24h"
+          [ngClass]="{'red' : crypto.market_data.price_change_percentage_24h<0,
+                      'green' : crypto.market_data.price_change_percentage_24h>0}">{{crypto.market_data.price_change_percentage_24h}}
+        %</h1>
+    </div>
+
+    <div class="price-low-high">
+      <p>Low: {{crypto.market_data.low_24h.usd}}$ - High: {{crypto.market_data.high_24h.usd}}$</p>
+    </div>
+    <div class="market-cap">
+      <h2>Market Cap: ${{crypto.market_data.market_cap.usd.toLocaleString('en-us', {minimumFractionDigits: 2})}}</h2>
+      <h2>24H Volume: ${{crypto.market_data.total_volume.usd.toLocaleString('en-us', {minimumFractionDigits: 2})}}</h2>
+    </div>
+
+  </div>
+</div>
+

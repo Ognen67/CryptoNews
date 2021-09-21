@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.property {
+  font-weight: 700;
+}
+
+.value {
+  color: cyan;
+  font-weight: bold;
+}

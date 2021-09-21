@@ -28,3 +28,13 @@
 .crypto-image {
   height: 100px;
 }
+
+#favorite {
+  display: none;
+}
+
+#container:hover~#favorite{
+  display: block;
+}
+
+

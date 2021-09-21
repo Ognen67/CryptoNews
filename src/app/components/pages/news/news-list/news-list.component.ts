@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CryptoService} from '../../service/crypto.service';
-import {StatusUpdates} from '../../interface/status-update/StatusUpdate';
+import {CryptoService} from '../../../../service/crypto.service';
+import {StatusUpdates} from '../../../../interface/status-update/StatusUpdate';
 
 @Component({
   selector: 'app-news-list',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CryptoService} from '../../service/crypto.service';
-import {Coin, TrendingCoins} from '../../interface/trending/TrendingCoins';
-import {TrendingCoin} from '../../interface/trending/TrendingCoin';
+import {CryptoService} from '../../../service/crypto.service';
+import {Coin, TrendingCoins} from '../../../interface/trending/TrendingCoins';
+import {TrendingCoin} from '../../../interface/trending/TrendingCoin';
 
 @Component({
   selector: 'app-trending',

@@ -1,10 +1,16 @@
-<div class="container">
+<div class="container" (click)="viewCrypto(crypto)">
   <div class="image">
     <img class="crypto-image" src="{{crypto.image}}" alt="">
   </div>
   <div class="metadata">
     <h1>{{crypto.name}}</h1>
     <p>Price: {{crypto.current_price}}</p>
-    <p>Price change in 24h: {{crypto.price_change_percentage_24h}}</p>
+    <p>Market Cap: ${{crypto.market_cap.toLocaleString('en-us', {minimumFractionDigits: 2})}}M</p>
+    <p>Price change in 24h: {{crypto.price_change_percentage_24h}} %</p>
+  </div>
+  <div id="favorite">
+    <button mat-fab aria-label="Add to favorite" (click)="addToFavorite(crypto)">
+      <mat-icon>favorite</mat-icon>
+    </button>
   </div>
 </div>
