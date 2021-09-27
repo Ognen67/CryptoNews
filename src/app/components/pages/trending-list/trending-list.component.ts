@@ -20,7 +20,6 @@ export class TrendingListComponent implements OnInit {
 
   getTrending(): void {
     this.cryptoService.getTrending().subscribe(res => {
-      console.log(res)
       this.trendingCoins = res
     })
   }

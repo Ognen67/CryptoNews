@@ -1,6 +1,13 @@
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
   margin: 15px;
+}
+
+#spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

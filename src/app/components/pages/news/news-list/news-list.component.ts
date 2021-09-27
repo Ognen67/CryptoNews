@@ -19,7 +19,6 @@ export class NewsListComponent implements OnInit {
 
   getStatusUpdates(): void {
     this.cryptoService.getStatusUpdates().subscribe(res => {
-      console.log(res)
       this.statusUpdates = res
     })
   }

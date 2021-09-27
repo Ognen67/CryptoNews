@@ -14,12 +14,11 @@ export class CryptoListComponent implements OnInit {
   constructor(private cryptoService: CryptoService) { }
 
   ngOnInit(): void {
-    this.getCrypto()
+    this.getAllCryptos()
   }
 
-  getCrypto(): void {
+  getAllCryptos(): void {
     this.cryptoService.getMarkets().subscribe(res => {
-      console.log(res)
       this.cryptos = res
     })
   }

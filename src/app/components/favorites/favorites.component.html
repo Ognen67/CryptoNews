@@ -1,1 +1,12 @@
-<p>favorites works!</p>
+<div class="container" *ngIf="this.cryptoService.favorites; else info">
+  <div *ngFor="let crypto of cryptos">
+    <app-crypto [crypto]="crypto"></app-crypto>
+  </div>
+</div>
+<ng-template #info>
+  No Favorites Found, Go Add Some!
+</ng-template>
+
+
+
+

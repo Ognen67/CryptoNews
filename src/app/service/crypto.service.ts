@@ -1,28 +1,36 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {TrendingCoins} from '../interface/trending/TrendingCoins';
-import {TrendingCoin} from '../interface/trending/TrendingCoin';
-import {map} from 'rxjs/operators';
 import {Coin} from '../interface/Coin/Coin';
 import {GlobalData} from '../interface/GlobalData';
+import {Crypto} from '../interface/market/Crypto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CryptoService {
 
-  baseurl = "https://api.coingecko.com/api/v3"
-  coinMarkets = "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-  trending = "search/trending"
-  statusUpdates = "status_updates"
-  favorites: Crypto[];
+  baseurl = 'https://api.coingecko.com/api/v3'
+  coinMarkets = 'coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+  trending = 'search/trending'
+  statusUpdates = 'status_updates'
+  favorites: string[] = [];
+  favoriteCryptos: Crypto[]
 
   constructor(private http: HttpClient) {
   }
 
-  getMarkets(): Observable<any> {
-    return this.http.get<any>(`${this.baseurl}/${this.coinMarkets}`)
+  getFavorites(): string[] {
+    return this.favorites
+  }
+
+  getMarkets(): Observable<Crypto[]> {
+    return this.http.get<Crypto[]>(`${this.baseurl}/${this.coinMarkets}`)
+  }
+
+  getMarketCryptos(cryptoIds: string[]): Observable<Crypto[]> {
+    return this.http.get<Crypto[]>(`${this.baseurl}/coins/markets?vs_currency=usd&ids=${cryptoIds}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
   }
 
   getTrending(): Observable<TrendingCoins> {
@@ -41,8 +49,12 @@ export class CryptoService {
     return this.http.get<GlobalData>(`${this.baseurl}/global`)
   }
 
-  addToFavorite(cryptoId: string) {
-    this.favorites.push(crypto)
+  addToFavorite(cryptoId: string): void {
+    if (!this.favorites.includes(cryptoId)) {
+      this.favorites.push(cryptoId)
+    } else {
+      console.log(`${cryptoId} already exists in favorites`)
+    }
     console.log(this.favorites)
   }
 }

@@ -12,9 +12,14 @@
 }
 
 .container:hover {
-  box-shadow: 1px 1px 1px 1px #828282;
-  background-color: #bababa;
+  box-shadow: .5px .5px .5px .5px #828282;
+  background-color: #afafaf;
   transition: 0.2s;
+  cursor: pointer;
+}
+
+.title {
+  width: fit-content;
 }
 
 .metadata {
@@ -25,16 +30,21 @@
   flex-direction: column;
 }
 
+.price {
+  font-weight: bold;
+  color: #616161;
+}
+
 .crypto-image {
   height: 100px;
 }
 
-#favorite {
+.favorite {
   display: none;
+  transition: 1s;
 }
 
-#container:hover~#favorite{
+.container:hover .favorite{
   display: block;
 }
-
 

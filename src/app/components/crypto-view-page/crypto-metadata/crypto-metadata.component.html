@@ -20,7 +20,13 @@
       <h2>Market Cap: ${{crypto.market_data.market_cap.usd.toLocaleString('en-us', {minimumFractionDigits: 2})}}</h2>
       <h2>24H Volume: ${{crypto.market_data.total_volume.usd.toLocaleString('en-us', {minimumFractionDigits: 2})}}</h2>
     </div>
+  </div>
 
+  <div class="favorite">
+    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+            (click)="addToFavorite(crypto.id)">
+      <mat-icon>favorite</mat-icon>
+    </button>
   </div>
 </div>
 

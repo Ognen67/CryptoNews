@@ -1,4 +1,9 @@
-<div class="container" *ngIf="crypto$ | async as crypto">
-  <app-crypto-metadata [crypto] = crypto></app-crypto-metadata>
-  <app-crypto-info [crypto] = crypto></app-crypto-info>
+<div class="container" *ngIf="crypto$ | async as crypto; else spinner">
+  <app-crypto-metadata [crypto]=crypto></app-crypto-metadata>
+  <app-crypto-info [crypto]=crypto></app-crypto-info>
 </div>
+
+<ng-template #spinner class="spinner">
+  <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+</ng-template>
+

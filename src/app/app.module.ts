@@ -27,6 +27,10 @@ import { InfoBannerComponent } from './components/info-banner/info-banner.compon
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { AddFavoriteButtonComponent } from './components/add-favorite-button/add-favorite-button.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {ConfirmDialogComponent} from './components/dialogs/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,9 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
     CryptoMetadataComponent,
     CryptoInfoComponent,
     InfoBannerComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    AddFavoriteButtonComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
     RouterModule,
     AppRoutingModule,
     MatSliderModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
