@@ -11,3 +11,4 @@ export interface TrendingCoin {
   price_btc: number;
   score: number;
 }
+

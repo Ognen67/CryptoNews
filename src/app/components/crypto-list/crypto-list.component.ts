@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Crypto} from '../../interface/market/Crypto';
 import {CryptoService} from '../../service/crypto.service';
 
@@ -11,7 +11,8 @@ export class CryptoListComponent implements OnInit {
 
   cryptos: Crypto[]
 
-  constructor(private cryptoService: CryptoService) { }
+  constructor(private cryptoService: CryptoService) {
+  }
 
   ngOnInit(): void {
     this.getAllCryptos()
@@ -20,6 +21,18 @@ export class CryptoListComponent implements OnInit {
   getAllCryptos(): void {
     this.cryptoService.getMarkets().subscribe(res => {
       this.cryptos = res
+    })
+  }
+
+  addWorkout(): void {
+    this.cryptoService.addWorkout().subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  getWorkout(): void {
+    this.cryptoService.getWorkout().subscribe(res => {
+      console.log(res)
     })
   }
 }

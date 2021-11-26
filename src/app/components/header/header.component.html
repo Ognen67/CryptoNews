@@ -1,11 +1,11 @@
 <div class="header">
   <a [routerLink]="'home'" class="logo">CryptoNews</a>
   <div class="header-right">
-    <a [routerLink]="'cryptocurrencies'" class="active">Cryptocurrencies</a>
-    <a [routerLink]="'news'" >News</a>
-    <a [routerLink]="'trending'" >Trending</a>
-    <a [routerLink]="'favorites'" >Favorites</a>
-    <a [routerLink]="'contact'">Contact</a>
-    <a [routerLink]="'about'" >About</a>
+    <a [routerLink]="'cryptocurrencies'" [routerLinkActive]="['active']">Cryptocurrencies</a>
+    <a [routerLink]="'news'" [routerLinkActive]="['active']" >News</a>
+    <a [routerLink]="'trending'" [routerLinkActive]="['active']" >Trending</a>
+    <a [routerLink]="'favorites'" [routerLinkActive]="['active']" >Favorites</a>
+    <a [routerLink]="'contact'" [routerLinkActive]="['active']">Contact</a>
+    <a [routerLink]="'about'" [routerLinkActive]="['active']" >About</a>
   </div>
 </div>

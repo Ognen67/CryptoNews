@@ -33,8 +33,8 @@ export class CryptoViewComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
+
   }
 
 }

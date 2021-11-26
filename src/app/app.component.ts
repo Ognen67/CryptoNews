@@ -23,8 +23,8 @@ export class AppComponent {
     return this.http.get<Crypto>('localhost:8080/get-crypto')
   }
 
-  toggleBackgroundColor() {
-    if(this.color === 'dark') {
+  toggleBackgroundColor(): void {
+    if (this.color === 'dark') {
       this.color = 'light';
     } else {
       this.color = 'dark';

@@ -15,7 +15,6 @@ export class CryptoComponent implements OnInit {
   @Input() crypto: Crypto
   @Input() cryptoId: string
 
-
   constructor(private cryptoService: CryptoService,
               private router: Router) {
   }
@@ -31,7 +30,6 @@ export class CryptoComponent implements OnInit {
 
     if (confirm(`Are you sure you want to add ${cryptoId} to favorites?`)) {
       this.cryptoService.addToFavorite(cryptoId)
-      console.log(cryptoId)
     }
   }
 

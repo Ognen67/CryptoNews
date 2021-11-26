@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CryptoService} from '../../../service/crypto.service';
-import {Coin, TrendingCoins} from '../../../interface/trending/TrendingCoins';
-import {TrendingCoin} from '../../../interface/trending/TrendingCoin';
+import {TrendingCoins} from '../../../interface/trending/TrendingCoins';
 
 @Component({
   selector: 'app-trending',
@@ -12,7 +11,8 @@ export class TrendingListComponent implements OnInit {
 
   trendingCoins: TrendingCoins
 
-  constructor(private cryptoService: CryptoService) { }
+  constructor(private cryptoService: CryptoService) {
+  }
 
   ngOnInit(): void {
     this.getTrending()

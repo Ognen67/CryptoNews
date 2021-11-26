@@ -5,6 +5,8 @@ import {TrendingCoins} from '../interface/trending/TrendingCoins';
 import {Coin} from '../interface/Coin/Coin';
 import {GlobalData} from '../interface/GlobalData';
 import {Crypto} from '../interface/market/Crypto';
+import {ChartInfo} from '../interface/ChartInfo/ChartInfo';
+import {WorkoutRequest} from '../interface/WorkoutRequest/WorkoutRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,7 @@ export class CryptoService {
   statusUpdates = 'status_updates'
   favorites: string[] = [];
   favoriteCryptos: Crypto[]
+  workoutRequest: WorkoutRequest
 
   constructor(private http: HttpClient) {
   }
@@ -49,6 +52,16 @@ export class CryptoService {
     return this.http.get<GlobalData>(`${this.baseurl}/global`)
   }
 
+  getWorkout(): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/api/1`)
+  }
+
+  addWorkout(): Observable<any> {
+    this.workoutRequest = { id: 3, name: "Chest", length: 60}
+    console.log(this.workoutRequest)
+    return this.http.post<any>(`http://localhost:8080/api`, this.workoutRequest)
+  }
+
   addToFavorite(cryptoId: string): void {
     if (!this.favorites.includes(cryptoId)) {
       this.favorites.push(cryptoId)
@@ -57,4 +70,9 @@ export class CryptoService {
     }
     console.log(this.favorites)
   }
+
+  getChartForCrypto(cryptoId: string, days: string): Observable<ChartInfo> {
+    return this.http.get<ChartInfo>(`https://api.coingecko.com/api/v3/coins/${cryptoId}/market_chart?vs_currency=usd&days=${days}`)
+  }
+
 }
